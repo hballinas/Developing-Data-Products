@@ -1,0 +1,47 @@
+---
+title: "Mexico_City_Iconic"
+author: "Horacio Ballinas"
+date: "10/10/2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Mexico City Iconic Places
+
+```{r, echo=FALSE}
+
+library(leaflet)
+
+my_map <- leaflet() %>% addTiles()
+
+mexicoCityIcon <- makeIcon(
+  iconUrl = "http://www.cilacfreire.mx/sites/default/files/FotosCilac/mex.png",
+  iconWidth = 31*215/230, iconHeight = 31,
+  iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+
+mexicoCitySites <- c(
+  "<a href='http://www.nationalgeographic.com/archaeology-and-history/archaeology/teotihuacan/'>Teotihuacan Pyramids</a>",
+  "<a href='https://theculturetrip.com/north-america/mexico/articles/a-brief-history-of-mexico-citys-zocalo/'>Zocalo (Tenochtitlan)</a>",
+  "<a href='https://www.unam.mx/'>UNAM - Universidad Nacional Autonoma de Mexico</a>",
+  "<a href='https://www.bmv.com.mx/en'>Bolsa Mexicana de Valores</a>",
+  "<a href='http://ipade.mx/'>IPADE - Insituto Panamericano de Alta Direccion de Empresa</a>",
+  "<a href='http://castillodechapultepec.inah.gob.mx/'>Chapultepec Castle</a>",
+  "<a href='https://en.wikipedia.org/wiki/Angel_of_Independence'>Independence Angel</a>",
+  "<a href='https://theculturetrip.com/north-america/mexico/articles/the-top-7-things-to-do-in-san-angel-mexico-city/'>San Angel</a>",
+  "<a href='https://en.wikipedia.org/wiki/Xochimilco'>Xochimilco</a>"
+)
+
+df <- data.frame(lat=c(19.692244, 19.432460, 19.331701, 19.429334, 19.463932, 19.420409, 19.427010, 19.344893, 19.286902), lng=c(-98.843576,-99.132819, -99.184291, -99.164742, -99.187072, -99.181967, -99.167599, -99.192703, -99.102169))
+  
+df%>%
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers(icon = mexicoCityIcon, popup = mexicoCitySites )
+
+my_map
+
+```
