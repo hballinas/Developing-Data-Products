@@ -1,0 +1,7 @@
+This Shiny App is simple.  It allows you to visualize how the Yield curve changes along with the S&P index (GSPC).
+The Yield Curve is the collection of US interest rates at different maturities: 3 months (DGS3MO), 1 year (DGS1), 2 years (DGS2), 5 years (DGS5), 7 years (DGS7), 10 years (DGS10), 20 years (DGS20) and 30 years (DGS30). 
+We could only capture the S&P index data from 2000 to the present, but we are able to capture how the market has grown and crashed a couple of times.
+The app has a data slider that will make the red marker on the S&P move.  At the same time, the yield curve for that date will be plotted.
+You can see that whenever the yield curve flattens and its slope changes for a few days, it has signaled a market crash is coming a few months later.
+You can use this app to track how the yield curve is flattening in 2017.
+Monitor daily and take action accordingly!
